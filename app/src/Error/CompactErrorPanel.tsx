@@ -99,14 +99,6 @@ function ErrorLink({problem, message, children}: {
   const handleError = useOpenErrorDialog();
   return <Link onClick={() =>{
     handleError({type: "handleError", error: {problem, message}})
-    analytics.track({
-      event: "Error Link Clicked",
-      properties: {
-        problem,
-        message,
-      },
-      type: "track"
-    })
   }}>
     {children}
   </Link>
